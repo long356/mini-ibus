@@ -35,17 +35,21 @@
 **当前 Phase**：Phase 0（项目骨架）
 
 **进行中任务**：
-- 任务 0.2: 定义全局错误码
+- 任务 0.4: CMake 子目录 + 日志初始化
 
 **已完成任务**：
 - 任务 0.1: 初始化项目结构 + CMake
+- 任务 0.2: 定义全局错误码
+- 任务 0.3: 实现 Address 类
 
 **已完成模块**：
 - CMakeLists.txt（顶层 + 各子目录）
 - .gitignore
 - README.md
+- core/errors.h / .cc（ErrorCode 枚举 + ErrorCodeToString）
+- core/address.h / .cc（Address 编解码 + Role/Name 枚举）
 
-**下一步任务**：任务 0.2 → 0.3 → 0.4 → Phase 1
+**下一步任务**：任务 0.4 → Phase 1
 
 ---
 
