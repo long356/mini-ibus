@@ -1,0 +1,31 @@
+# Build output
+build/
+out/
+cmake-build-*/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Generated protobuf files
+*.pb.h
+*.pb.cc
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Secrets
+mimo-key.txt
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Build artifacts
+*.o
+*.a
+*.so
+*.exe
+*.dll
