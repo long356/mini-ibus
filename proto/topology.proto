@@ -1,0 +1,34 @@
+// proto/topology.proto - Topology broadcast definitions for multi-device routing
+// Fully populated in Phase 3; minimal stubs for Phase 1-2.
+syntax = "proto3";
+
+package minibus.proto;
+
+// A single edge in the topology graph
+message Link {
+  uint32 peer_role = 1;       // peer's Role (uint16)
+  uint32 medium = 2;          // 0=TCP, 1=USB, 2=WIFI, 3=BLE
+  uint32 weight = 3;          // lower = higher priority
+  uint64 last_active_ms = 4;  // last time this link was active
+}
+
+// One device's local topology snapshot
+message LocalTopology {
+  uint32 publisher_role = 1;  // which role published this
+  uint64 version = 2;         // monotonic version for this publisher
+  uint64 timestamp_ms = 3;
+  repeated Link links = 4;    // edges from this device
+}
+
+// A business node registered on a device
+message NodeRegistration {
+  uint32 node_address = 1;      // full (role, name) address
+  repeated uint32 services = 2; // service IDs this node provides
+  repeated uint32 topics = 3;   // topic IDs this node subscribes to
+}
+
+// Combined broadcast: topology + registered nodes
+message FullTopologyBroadcast {
+  LocalTopology topology = 1;
+  repeated NodeRegistration nodes = 2;
+}
