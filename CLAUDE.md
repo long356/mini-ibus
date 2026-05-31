@@ -35,7 +35,7 @@
 **当前 Phase**：Phase 1（单设备核心）
 
 **进行中任务**：
-- 任务 1.3: 实现 UdsConnection
+- 任务 1.4: 实现 ThreadPool
 
 **已完成任务**：
 - 任务 0.1: 初始化项目结构 + CMake
@@ -44,6 +44,7 @@
 - 任务 0.4: CMake 子目录 + 日志初始化
 - 任务 1.1: 定义 Protobuf 消息
 - 任务 1.2: 实现 LinkHeader 编解码
+- 任务 1.3: 实现 UdsConnection
 
 **已完成模块**：
 - CMakeLists.txt（顶层 + 各子目录）
