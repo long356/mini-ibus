@@ -32,15 +32,16 @@
 
 > 每完成一个任务，请更新此区域
 
-**当前 Phase**：Phase 0（项目骨架）
+**当前 Phase**：Phase 1（单设备核心）
 
 **进行中任务**：
-- 任务 0.4: CMake 子目录 + 日志初始化
+- 任务 1.1: 定义 Protobuf 消息
 
 **已完成任务**：
 - 任务 0.1: 初始化项目结构 + CMake
 - 任务 0.2: 定义全局错误码
 - 任务 0.3: 实现 Address 类
+- 任务 0.4: CMake 子目录 + 日志初始化
 
 **已完成模块**：
 - CMakeLists.txt（顶层 + 各子目录）
@@ -48,8 +49,9 @@
 - README.md
 - core/errors.h / .cc（ErrorCode 枚举 + ErrorCodeToString）
 - core/address.h / .cc（Address 编解码 + Role/Name 枚举）
+- core/logging.h / .cc（spdlog 封装 + printf fallback）
 
-**下一步任务**：任务 0.4 → Phase 1
+**下一步任务**：任务 1.1 → 1.2 → 1.3 → ... → Phase 2
 
 ---
 
