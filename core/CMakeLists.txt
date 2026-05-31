@@ -7,9 +7,15 @@ add_library(minibus_core STATIC
   address.cc
   logging.h
   logging.cc
+  message_codec.h
+  message_codec.cc
 )
 
 target_include_directories(minibus_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/..)
+
+if(MINIBUS_CXX_FLAGS)
+  target_compile_options(minibus_core PRIVATE ${MINIBUS_CXX_FLAGS})
+endif()
 
 if(spdlog_FOUND)
   target_compile_definitions(minibus_core PUBLIC MINIBUS_HAS_SPDLOG)
