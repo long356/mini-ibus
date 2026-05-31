@@ -29,6 +29,13 @@ if(GTest_FOUND OR GTEST_FOUND OR TARGET GTest::gtest)
   target_include_directories(message_codec_test PRIVATE ${CMAKE_SOURCE_DIR})
   add_test(NAME message_codec_test COMMAND message_codec_test)
 
+  add_executable(connection_test
+    connection_test.cc
+  )
+  target_link_libraries(connection_test PRIVATE minibus_core GTest::gtest GTest::gtest_main)
+  target_include_directories(connection_test PRIVATE ${CMAKE_SOURCE_DIR})
+  add_test(NAME connection_test COMMAND connection_test)
+
   if(Protobuf_FOUND)
     add_executable(proto_test
       proto_test.cc

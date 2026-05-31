@@ -9,6 +9,8 @@ add_library(minibus_core STATIC
   logging.cc
   message_codec.h
   message_codec.cc
+  connection.h
+  connection.cc
 )
 
 target_include_directories(minibus_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/..)
