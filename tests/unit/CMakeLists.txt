@@ -14,4 +14,11 @@ if(GTest_FOUND OR GTEST_FOUND)
   target_link_libraries(address_test PRIVATE minibus_core GTest::GTest GTest::Main)
   target_include_directories(address_test PRIVATE ${CMAKE_SOURCE_DIR})
   add_test(NAME address_test COMMAND address_test)
+
+  add_executable(logging_test
+    logging_test.cc
+  )
+  target_link_libraries(logging_test PRIVATE minibus_core GTest::GTest GTest::Main)
+  target_include_directories(logging_test PRIVATE ${CMAKE_SOURCE_DIR})
+  add_test(NAME logging_test COMMAND logging_test)
 endif()
