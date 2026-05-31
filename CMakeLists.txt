@@ -7,16 +7,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Warning flags (compiler-specific)
-add_compile_options(
-  $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-Wall -Wextra -Wpedantic>
-  $<$<CXX_COMPILER_ID:MSVC>:/W4>
-)
-
-# No exceptions, no RTTI (compiler-specific)
-add_compile_options(
-  $<$<OR:$<CXX_COMPILER_ID:GNU>,$<CXX_COMPILER_ID:Clang>>:-fno-exceptions -fno-rtti>
-  $<$<CXX_COMPILER_ID:MSVC>:/EHs-c- /GR->
-)
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic -fno-exceptions -fno-rtti)
+elseif(MSVC)
+  add_compile_options(/W4 /EHs-c- /GR-)
+endif()
 
 # External dependencies (optional at this stage)
 find_package(Protobuf QUIET)

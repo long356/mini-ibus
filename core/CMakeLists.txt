@@ -1,2 +1,8 @@
 # core/CMakeLists.txt - Core library (minibus_core)
-# Will be populated starting from task 0.2 with source files.
+
+add_library(minibus_core STATIC
+  errors.h
+  errors.cc
+)
+
+target_include_directories(minibus_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/..)
